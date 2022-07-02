@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class coroutines : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Coroutine myCoroutine;
+    private void Start()
     {
-        
+        myCoroutine = StartCoroutine(DoStuff());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator DoStuff()
     {
-        
+        yield return new WaitForSeconds(3f);
+        Debug.Log("Coroutine");
     }
+
 }
